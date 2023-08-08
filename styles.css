@@ -1,0 +1,196 @@
+/* Created by Tivotal */
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  font-family: "POppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#5c77f8 0%, #6e74f1 100%);
+}
+
+.wrapper {
+  width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper input[type="radio"] {
+  display: none;
+}
+
+.wrapper header {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: relative;
+}
+
+.wrapper header label {
+  height: 100%;
+  width: 30%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wrapper header label:nth-child(2) {
+  width: 40%;
+}
+
+.wrapper #tab1:checked ~ header .tab1,
+.wrapper #tab2:checked ~ header .tab2,
+.wrapper #tab3:checked ~ header .tab3 {
+  color: #fff;
+}
+
+.wrapper header .slider {
+  position: absolute;
+  height: 85%;
+  background: linear-gradient(145deg, #5c77f8 0%, #5e74f1 100%);
+  border-radius: inherit;
+  transition: all 0.3s ease;
+}
+
+.wrapper #tab1:checked ~ header .slider {
+  left: 0%;
+  width: 90px;
+  transform: translateX(5%);
+}
+
+.wrapper #tab2:checked ~ header .slider {
+  left: 50%;
+  width: 120px;
+  transform: translateX(-50%);
+}
+
+.wrapper #tab3:checked ~ header .slider {
+  left: 100%;
+  width: 95px;
+  transform: translateX(-105%);
+}
+
+.wrapper .content {
+  overflow: hidden;
+}
+
+.wrapper .content .cards {
+  display: flex;
+  width: 300%;
+}
+
+.wrapper .content .cards .card {
+  width: 33.4%;
+}
+
+.wrapper .content .cards .card1 {
+  transition: all 0.3s ease;
+}
+
+.wrapper #tab1:checked ~ .content .cards .card1 {
+  margin-left: 0%;
+}
+
+.wrapper #tab2:checked ~ .content .cards .card1 {
+  margin-left: -33.4%;
+}
+
+.wrapper #tab3:checked ~ .content .cards .card1 {
+  margin-left: -66.8%;
+}
+
+.wrapper .content .cards .card .price-details {
+  margin: 20px 0;
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.card .price-details .price {
+  font-size: 65px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+}
+
+.card .price-details .price::before,
+.card .price-details .price::after {
+  position: absolute;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+.card .price-details .price::before {
+  content: "$";
+  left: -13px;
+  top: 17px;
+  font-size: 20px;
+}
+
+.card .price-details .price::after {
+  content: "/mon";
+  right: -33px;
+  bottom: 17px;
+  font-size: 13px;
+}
+
+.card .price-details p {
+  font-size: 18px;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.card .features li {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.card .features li i {
+  background: linear-gradient(#5c77f8 0%, #5e74f1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card .features li span {
+  margin-left: 10px;
+}
+
+.card button {
+  width: 100%;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(#5c77f8 0%, #5e74f1 100%);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.card button:hover {
+  transform: scale(0.98);
+}
